@@ -1,0 +1,569 @@
+/* ==========================================================================
+   Baghewala Well-to-Surface Digital Twin — INDUSTRIAL CONTROL ROOM DESIGN SYSTEM
+   Sophisticated dark navy, graphite, metallic steel, amber-gold & steam-cyan palette
+   ========================================================================== */
+
+:root {
+  /* Surfaces & Backgrounds (Light Industrial Control Room #EEF1F4 / #FFFFFF) */
+  --bg-app: #eef1f4;             /* Cool concrete off-white */
+  --bg-workspace: #eef1f4;       /* Industrial workstation surface */
+  --bg-card: #ffffff;            /* Clean white instrument panel */
+  --bg-card-hover: #f7f9fa;      /* Subtle active row hover */
+  --bg-panel: #ffffff;           /* Sidebar & header background */
+  --bg-input: #f2f5f8;           /* Recessed input cavity */
+  --bg-subtle: #f0f3f6;          /* Secondary card/row fill */
+  --bg-elevated: #ffffff;        /* Popover & modal surfaces */
+
+  /* Borders & Dividers (Steel Grey & Hairline Engineering Dividers) */
+  --border-subtle: #e2e6eb;      /* Hairline grid line */
+  --border-card: #d5dbe1;        /* 1px steel border */
+  --border-focus: #0b7bc1;       /* Process blue focus */
+  --border-highlight: #ff6a13;   /* Safety orange highlight border */
+  --border-metallic: #b5bfc9;    /* Machined edge highlight */
+
+  /* Industrial Accents */
+  --accent-amber: #ff6a13;       /* Safety orange / primary oil action */
+  --accent-amber-glow: rgba(255, 106, 19, 0.18);
+  --accent-amber-light: #fff3ec;
+  --accent-amber-text: #d95300;
+
+  --accent-gold: #e27d11;
+  --accent-gold-dark: #b25300;
+
+  --accent-blue: #0b7bc1;        /* Process blue / steam & water */
+  --accent-cyan: #0b7bc1;        /* Steam cyan/blue */
+  --accent-cyan-glow: rgba(11, 123, 193, 0.18);
+  --accent-cyan-light: #ebf5fb;
+  --accent-cyan-text: #0968a5;
+
+  --accent-emerald: #2a9d8f;     /* Steel teal / healthy status */
+  --accent-emerald-glow: rgba(42, 157, 143, 0.18);
+  --accent-emerald-light: #e8f7f5;
+  --accent-emerald-text: #217f73;
+
+  --accent-rose: #d64545;        /* Signal red / alarms only */
+  --accent-rose-glow: rgba(214, 69, 69, 0.18);
+  --accent-rose-light: #fbebeb;
+  --accent-rose-text: #b82c2c;
+
+  --accent-caution: #f2a900;     /* Amber attention */
+  --accent-purple: #7c3aed;      /* Electric power / drive */
+  --accent-purple-light: #f3e8ff;
+  --accent-purple-text: #6d28d9;
+
+  /* Standard Industrial Design Tokens (WCAG AA Compliant) */
+  --surface: #ffffff;
+  --surface-2: #f4f6f8;
+  --surface-3: #eef1f4;
+  --ink: #0f172a;                /* WCAG > 14:1 on white, > 11:1 on surface-2 */
+  --ink-muted: #334155;          /* WCAG > 7:1 on white */
+  --ink-dim: #475569;            /* WCAG > 5.5:1 on white */
+  --border: #cbd5e1;
+  --accent-oil: #d97706;         /* Amber/orange oil */
+  --accent-steam: #0284c7;       /* Cyan/blue steam */
+  --ok: #059669;                 /* Emerald healthy */
+  --warn: #d97706;               /* Amber warning */
+  --alarm: #dc2626;              /* Red danger */
+
+  /* Text Typography (Engineered Ink & Steel-Grey) */
+  --text-main: #0f172a;          /* Ink primary text */
+  --text-muted: #334155;         /* Slate secondary text */
+  --text-dim: #475569;           /* Steel-grey secondary metadata */
+  --text-light: #64748b;         /* Muted inactive captions */
+
+  /* Typography Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Radii (12px unified card radius) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Industrial Control Room Shadows (Soft 0 1px 3px rgba(20,30,40,.08)) */
+  --shadow-sm: 0 1px 3px rgba(20, 30, 40, 0.08);
+  --shadow-md: 0 4px 12px rgba(20, 30, 40, 0.08);
+  --shadow-lg: 0 10px 25px rgba(20, 30, 40, 0.10);
+  --shadow-glow-amber: 0 0 16px rgba(255, 106, 19, 0.18);
+  --shadow-glow-cyan: 0 0 16px rgba(11, 123, 193, 0.18);
+  --shadow-glow-emerald: 0 0 16px rgba(42, 157, 143, 0.18);
+}
+
+[data-theme="dark"] {
+  --bg-app: #080c16;
+  --bg-workspace: #0b1120;
+  --bg-card: #111a2e;
+  --bg-card-hover: #16223d;
+  --bg-panel: #0d1527;
+  --bg-input: #090e1c;
+  --bg-subtle: #141e34;
+  --bg-elevated: #1a2744;
+
+  --border-subtle: #1e2d4a;
+  --border-card: #243456;
+  --border-focus: #0ea5e9;
+  --border-highlight: #f59e0b;
+  --border-metallic: #33486e;
+
+  /* Standard Industrial Design Tokens in Dark Theme */
+  --surface: #111a2e;
+  --surface-2: #16223d;
+  --surface-3: #0b1120;
+  --ink: #f8fafc;
+  --ink-muted: #e2e8f0;
+  --ink-dim: #94a3b8;
+  --border: #243456;
+  --accent-oil: #f59e0b;
+  --accent-steam: #38bdf8;
+  --ok: #10b981;
+  --warn: #f59e0b;
+  --alarm: #ef4444;
+
+  --text-main: #f8fafc;
+  --text-muted: #e2e8f0;
+  --text-dim: #94a3b8;
+  --text-light: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-app);
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(11, 123, 193, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(255, 106, 19, 0.03) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-metallic);
+}
+
+/* Utility Flex Classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+
+/* Text & Typography Helpers */
+.font-mono {
+  font-family: var(--font-mono);
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.text-xxs {
+  font-size: 0.65rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-amber { color: var(--accent-amber-text); }
+.text-cyan { color: var(--accent-cyan-text); }
+.text-emerald { color: var(--accent-emerald-text); }
+.text-rose { color: var(--accent-rose-text); }
+.text-purple { color: var(--accent-purple-text); }
+.text-dim { color: var(--text-dim); }
+.text-muted { color: var(--text-muted); }
+.text-light { color: var(--text-light); }
+
+/* Industrial Card Surfaces */
+.card-dark, .card-light {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-dark:hover, .card-light:hover {
+  border-color: var(--border-metallic);
+}
+
+.border-amber { border-left: 3px solid var(--accent-amber); }
+.border-cyan { border-left: 3px solid var(--accent-cyan); }
+.border-emerald { border-left: 3px solid var(--accent-emerald); }
+.border-rose { border-left: 3px solid var(--accent-rose); }
+.border-purple { border-left: 3px solid var(--accent-purple); }
+
+/* Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber-text);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.badge-blue, .badge-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--accent-cyan-text);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald-text);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.badge-rose {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--accent-rose-text);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.badge-purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--accent-purple-text);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.badge-gray {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text-dim);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Provenance Indicators */
+.tag-telemetry {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent-cyan-text);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.tag-ml {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-amber-text);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.tag-sim {
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--accent-purple-text);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #080c16;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
+}
+
+.btn-secondary {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+}
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-metallic);
+  color: #ffffff;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  border: 1px solid var(--border-card);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-pill:hover {
+  color: var(--text-main);
+  border-color: var(--border-metallic);
+}
+
+.btn-pill.active {
+  background: var(--accent-amber);
+  color: #080c16;
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+/* Status Indicator Dots */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-dot.online {
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 8px var(--accent-emerald);
+}
+.status-dot.warning {
+  background-color: var(--accent-amber);
+  box-shadow: 0 0 8px var(--accent-amber);
+}
+.status-dot.offline {
+  background-color: var(--accent-rose);
+  box-shadow: 0 0 8px var(--accent-rose);
+}
+
+/* Icon Box Containers */
+.icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.bg-amber-100 { background: rgba(245, 158, 11, 0.15); }
+.text-amber-700 { color: var(--accent-amber-text); }
+.bg-blue-100, .bg-cyan-100 { background: rgba(6, 182, 212, 0.15); }
+.text-blue-700, .text-cyan-700 { color: var(--accent-cyan-text); }
+.bg-emerald-100 { background: rgba(16, 185, 129, 0.15); }
+.text-emerald-700 { color: var(--accent-emerald-text); }
+.bg-rose-100 { background: rgba(239, 68, 68, 0.15); }
+.text-rose-700 { color: var(--accent-rose-text); }
+.bg-purple-100 { background: rgba(139, 92, 246, 0.15); }
+.text-purple-700 { color: var(--accent-purple-text); }
+
+/* Spin animation */
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Custom Native Range Slider Styles (Custom Track, Fill, Thumb & Focus Ring)
+   ========================================================================== */
+input[type="range"],
+.control-slider,
+.slider-input,
+.slider-mini {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--border, #cbd5e1);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  margin: 8px 0;
+  transition: background 0.15s ease;
+}
+
+input[type="range"]:hover,
+.control-slider:hover,
+.slider-input:hover,
+.slider-mini:hover {
+  background: var(--border-metallic, #94a3b8);
+}
+
+/* WebKit (Chrome / Safari / Edge) */
+input[type="range"]::-webkit-slider-thumb,
+.control-slider::-webkit-slider-thumb,
+.slider-input::-webkit-slider-thumb,
+.slider-mini::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-amber, #ff6a13);
+  border: 2px solid var(--surface, #ffffff);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover,
+.control-slider::-webkit-slider-thumb:hover,
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  box-shadow: 0 0 8px rgba(255, 106, 19, 0.5);
+}
+
+input[type="range"]:focus-visible,
+.control-slider:focus-visible,
+.slider-input:focus-visible {
+  outline: 2px solid var(--accent-amber, #ff6a13);
+  outline-offset: 3px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb,
+.control-slider::-moz-range-thumb,
+.slider-input::-moz-range-thumb,
+.slider-mini::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-amber, #ff6a13);
+  border: 2px solid var(--surface, #ffffff);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Shared Card & Non-Glued Label/Value Component
+   ========================================================================== */
+.card-dark, .card-light {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border, #cbd5e1);
+  color: var(--ink, #0f172a);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  background: var(--surface-2, #f4f6f8);
+  border: 1px solid var(--border, #cbd5e1);
+  border-radius: var(--radius-md, 8px);
+  padding: 12px 14px;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-muted, #334155);
+  display: block;
+}
+
+.stat-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink, #0f172a);
+  line-height: 1.25;
+}
+
+.stat-item .text-dim,
+.stat-item .text-xxs {
+  margin-top: 2px;
+  color: var(--ink-dim, #475569) !important;
+}
+
+/* Fix headline colors in light theme */
+.stage-detail-headline {
+  color: var(--ink, #0f172a) !important;
+}
+
+.stage-tab-title {
+  color: var(--ink-muted, #334155) !important;
+}
+
+.stage-tab-btn.active .stage-tab-title {
+  color: var(--ink, #0f172a) !important;
+  font-weight: 700;
+}
+

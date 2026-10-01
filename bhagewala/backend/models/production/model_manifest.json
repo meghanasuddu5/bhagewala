@@ -1,0 +1,17 @@
+{
+  "project": "Baghewala Well-to-Surface Digital Twin",
+  "model_version": "V1.3-Hybrid",
+  "base_model": "V1.2-Two-Stage",
+  "model_file": "two_stage_oil_model.joblib",
+  "prediction_strategy": {
+    "if_predicted_zero_flag_is_1": "Use persistence baseline",
+    "otherwise": "Use V1.2 predicted oil rate"
+  },
+  "required_runtime_input": [
+    "V1.2 model feature inputs",
+    "current production rate for persistence fallback"
+  ],
+  "target": "Next-day oil production rate (BOPD)",
+  "validation_status": "Experimental; not field-validated",
+  "dataset": "ENR004 production dataset; Baghewala applicability unverified"
+}
